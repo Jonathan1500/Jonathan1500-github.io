@@ -263,36 +263,6 @@ $(document).ready(function () {
         return false;
     });
 
-    /*  -------------------------------
-         Google Map ( for contact page )
-        -------------------------------  */
-
-    $('#google-map').gMap({
-        latitude: 31.562130,
-        longitude: 74.319460,
-        maptype: 'TERRAIN',
-        scrollwheel: false,
-        zoom: 14,
-        markers: [
-            {
-                latitude: 31.562130,
-                longitude: 74.319460,
-                html: "I am Here!",
-                icon: {
-                    image: "images/icon/map_marker.png",
-                    iconsize: [46, 46],
-                    iconanchor: [12, 46]
-                }
-            }
-        ],
-        controls: {
-            panControl: false,
-            zoomControl: true,
-            mapTypeControl: false,
-            scaleControl: false,
-            streetViewControl: false,
-            overviewMapControl: false
-        }
-    });
+   
 
 });

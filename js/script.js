@@ -19,13 +19,12 @@
 /*  ------------------
     Remove Preloader
     ------------------  */
-
-/*$(window).load(function () {
+$(window).load(function () {
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .resume-page, .contact-page').hide();
     });
 });
-*/
+
 $(document).ready(function () {
 
     'use strict';

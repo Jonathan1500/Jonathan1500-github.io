@@ -9,20 +9,28 @@ $(window).load(function () {
 
 $(function() {
     $("#contactForm .submit").click(function() {
-        alert('test');
+       
         var name = $("#form_name").val();
         var email = $("#form_email").val();
         var text = $("#msg_text").val();
         var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
 
-        $.ajax({
+         $.ajax({
             type: "POST",
-            url: "email.php",
-            data: dataString,
-            success: function(){
-            $('.success').fadeIn(1000);
+            url: "php/contact.php",
+            data: $('#contactForm').serialize(),
+            success: function (msg) {
+                if (msg == 'SEND') {
+                    $('.success').fadeIn();
+                    $('.error').fadeOut();
+                    $('#contactForm')[0].reset();
+                } else {
+                    $('.success').fadeOut();
+                    $('.error').fadeIn().find('h3').text(msg);
+                }
             }
         });
+        return false;
 
         return false;
     });
@@ -245,7 +253,7 @@ $(document).ready(function () {
          Contact Form
         ------------- */
 
-    $('#contactForm').submit(function () {
+    /*$('#contactForm').submit(function () {
         
         $.ajax({
             type: "POST",
@@ -263,7 +271,7 @@ $(document).ready(function () {
             }
         });
         return false;
-    });
+    });*/
 
    
 

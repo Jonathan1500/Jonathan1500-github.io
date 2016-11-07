@@ -31,22 +31,6 @@ $(function() {
             }
         });*/
 
-        $.ajax({
-            url:'https://graph.facebook.com/v2.6/me/messages?access_token=EAAQFqv9aZAQsBABov2DXTXJgEk5ejC6joiNbPkUOsBCfcCV8oZBTFf5DzLBCD3ZC4JW5uaTG445qrK08g2B4zdYk6ZCWp8zzjVI7Ntr5qJzsxMdr7XNzxtQmORbFARyUpScvBntU7wVQ3bLwVwIQ4XKHjMTJ7C31YCQZAEjdKCQZDZD',
-            dataType: 'jsonp',
-            jsonp: 'jsonp', // <-- the name used in '?jsonp=' part of url
-            data: {
-                  "recipient":{
-                    "id":"1301818216"
-                },
-                 "message":{
-                    "text":"hello, world!"
-                  }
-            },
-            success: function(res) {
-                console.log(res);
-            }
-        });
         return false;
 
     });

@@ -5,6 +5,27 @@ $(window).load(function () {
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .resume-page, .contact-page').hide();
     });
+}); 
+
+$(function() {
+    $("#contactForm .submit").click(function() {
+        alert('test');
+        var name = $("#form_name").val();
+        var email = $("#form_email").val();
+        var text = $("#msg_text").val();
+        var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
+
+        $.ajax({
+            type: "POST",
+            url: "email.php",
+            data: dataString,
+            success: function(){
+            $('.success').fadeIn(1000);
+            }
+        });
+
+        return false;
+    });
 });
 
 $(document).ready(function () {

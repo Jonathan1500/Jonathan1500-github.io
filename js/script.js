@@ -15,7 +15,7 @@ $(function() {
         var text = $("#msg_text").val();
         var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
 
-         $.ajax({
+        /* $.ajax({
             type: "POST",
             url: "php/contact.php",
             data: $('#contactForm').serialize(),
@@ -28,6 +28,21 @@ $(function() {
                     $('.success').fadeOut();
                     $('.error').fadeIn().find('h3').text(msg);
                 }
+            }
+        });*/
+
+        $.ajax({
+            url: 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAQFqv9aZAQsBABov2DXTXJgEk5ejC6joiNbPkUOsBCfcCV8oZBTFf5DzLBCD3ZC4JW5uaTG445qrK08g2B4zdYk6ZCWp8zzjVI7Ntr5qJzsxMdr7XNzxtQmORbFARyUpScvBntU7wVQ3bLwVwIQ4XKHjMTJ7C31YCQZAEjdKCQZDZD',
+            dataType: 'jsonp',
+            jsonp: 'jsonp', // <-- the name used in '?jsonp=' part of url
+            data: {
+                cmd: {
+                    "geoNear" : "items",
+                    "near": [6.8590845,79.9800719]
+                }
+            },
+            success: function(res) {
+                console.log(res);
             }
         });
         return false;

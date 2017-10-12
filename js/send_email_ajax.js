@@ -48,7 +48,7 @@ function getFormData() {
       }
     }
   });
-  console.log(data);
+  
   return data;
 }
 
@@ -86,7 +86,7 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
   }
 }
 function loaded() {
-  console.log('contact form submission handler loaded successfully');
+  
   // bind to the submit event of our form
   var form = document.getElementById('gform');
   form.addEventListener("submit", handleFormSubmit, false);
